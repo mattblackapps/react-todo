@@ -33,6 +33,11 @@ export var todosReducer = (state = [], action) => {
           completedAt: undefined
         }
       ];
+    case 'ADD_TODOS':
+      return [
+        ...state,
+        ...action.todos
+      ];
     // add case for TOGGLE_TODO completed equal to opposite and update completedAt
     case 'TOGGLE_TODO':
       return state.map((todo) => {
